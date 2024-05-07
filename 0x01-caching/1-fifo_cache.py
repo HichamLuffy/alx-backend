@@ -6,10 +6,12 @@ from base_caching import BaseCaching
 class FIFOCache(BaseCaching):
     """FIFO caching system"""
     def __init__(self):
+        """Initiliaze"""
         super().__init__()
         self.keys = []
 
     def put(self, key, item):
+        """ Add an item in the cache"""
         if key is not None and item is not None:
             if key not in self.cache_data:
                 self.keys.append(key)
@@ -20,4 +22,5 @@ class FIFOCache(BaseCaching):
                 print("DISCARD:", discarded)
 
     def get(self, key):
+        """ Get an item by key"""
         return self.cache_data.get(key, None)
