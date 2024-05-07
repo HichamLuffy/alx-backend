@@ -6,6 +6,7 @@ from collections import Counter
 
 
 class LFUCache(BaseCaching):
+    """LFU caching system"""
     def __init__(self):
         super().__init__()
         self.key_access_times = Counter()

@@ -6,6 +6,7 @@ from collections import OrderedDict
 
 
 class LRUCache(BaseCaching):
+    """LRU caching system"""
     def __init__(self):
         super().__init__()
         self.cache_data = OrderedDict()
