@@ -13,7 +13,7 @@ class MRUCache(BaseCaching):
     def put(self, key, item):
         """ Add an item in the cache"""
         if key is not None and item is not None:
-            if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 removed = self.keys.pop()
                 self.cache_data.pop(removed)
                 print("DISCARD: {}".format(removed))
