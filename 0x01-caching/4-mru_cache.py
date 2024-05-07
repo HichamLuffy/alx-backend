@@ -3,7 +3,6 @@
 from base_caching import BaseCaching
 
 
-
 class MRUCache(BaseCaching):
     """MRU caching system"""
     def __init__(self):

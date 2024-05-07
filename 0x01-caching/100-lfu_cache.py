@@ -4,7 +4,6 @@ from base_caching import BaseCaching
 from collections import Counter
 
 
-
 class LFUCache(BaseCaching):
     """LFU caching system"""
     def __init__(self):

@@ -3,7 +3,6 @@
 from base_caching import BaseCaching
 
 
-
 class LIFOCache(BaseCaching):
     """LIFO caching system"""
     def __init__(self):
