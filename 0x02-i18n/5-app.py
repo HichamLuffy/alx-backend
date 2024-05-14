@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" Flask app """
+""" doc doc doc """
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 
 
 class Config(object):
-    """Config class"""
+    """doc doc doc"""
 
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -16,7 +16,6 @@ app = Flask(__name__)
 app.config.from_object(Config)
 babel = Babel(app)
 
-
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
@@ -26,7 +25,7 @@ users = {
 
 
 def get_user() -> dict:
-    """get_user"""
+    """doc doc doc"""
     user_id = request.args.get("login_as")
     if user_id is not None and int(user_id) in users:
         return users[int(user_id)]
@@ -35,13 +34,13 @@ def get_user() -> dict:
 
 @app.before_request
 def before_request():
-    """before_request"""
+    """doc doc doc"""
     g.user = get_user()
 
 
 @babel.localeselector
 def get_locale() -> str:
-    """get_locale"""
+    """doc doc doc"""
     if request.args.get("locale") in app.config["LANGUAGES"]:
         return request.args.get("locale")
     return request.accept_languages.best_match(app.config["LANGUAGES"])
@@ -49,7 +48,7 @@ def get_locale() -> str:
 
 @app.route("/")
 def index() -> str:
-    """Index route"""
+    """doc doc doc"""
     return render_template("5-index.html")
 
 
