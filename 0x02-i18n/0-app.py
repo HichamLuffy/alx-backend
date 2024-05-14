@@ -8,8 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """Index route"""
-    title = "Welcome to Holberton"
-    return render_template("0-index.html", title=title)
+    return render_template("0-index.html")
 
 
 if __name__ == "__main__":
