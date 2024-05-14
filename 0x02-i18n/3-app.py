@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" doc doc doc """
+""" Flask app """
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
 class Config(object):
-    """doc doc doc"""
+    """Config class"""
 
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -19,13 +19,13 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str:
-    """doc doc doc"""
+    """get_locale"""
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route("/")
 def index() -> str:
-    """doc doc doc"""
+    """Index route"""
     return render_template("3-index.html")
 
 
